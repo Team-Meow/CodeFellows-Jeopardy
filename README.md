@@ -1,13 +1,16 @@
 # CodeFellows-Jeopardy
+
 user friendly jeopardy game for 100/200 level Code Fellows students as a fun and interactive study guide
 
-## Team Meow:
+## Team Meow
+
   - Shelby Harner
   - Audrey Patterson
   - Lorenzo Ortega
   - Mohsin Behi
 
 ### Code Fellows Jeopardy Trivia Game
+
 **Summary:**
 
 **Categories** - CSS, HTML, Javascript, Terminal Commands, GitHub (same each round but each round will have 3 questions under each category) Daily double type questions TBD, Final Question - TBD
@@ -19,4 +22,9 @@ user friendly jeopardy game for 100/200 level Code Fellows students as a fun and
   - 
 
 ### Reflections & Comments:
-  - 
+
+### Wireframe:
+- [Home](assets/CodeFellows-Jeopardy-Wireframe-Home.png)
+- [Leaderboard](assets/CodeFellows-Jeopardy-Wireframe-Leaderboard.png)
+- [About-Us](assets/CodeFellows-Jeopardy-Wireframe-About Us.png)
+- [Game-Page](assets/CodeFellows-Jeopardy-Wireframe-Game Page.png)
