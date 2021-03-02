@@ -25,5 +25,5 @@ user friendly jeopardy game for 100/200 level Code Fellows students as a fun and
 ### Wireframe:
 - [Home](assets/CodeFellows-Jeopardy-Wireframe-Home.png)
 - [Leaderboard](assets/CodeFellows-Jeopardy-Wireframe-Leaderboard.png)
-- [About Us](assets/CodeFellows-Jeopardy-Wireframe-About Us.png)
-- [Game Page](assets/CodeFellows-Jeopardy-Wireframe-Game Page.png)
+- [About-Us](assets/CodeFellows-Jeopardy-Wireframe-About Us.png)
+- [Game-Page](assets/CodeFellows-Jeopardy-Wireframe-Game Page.png)
