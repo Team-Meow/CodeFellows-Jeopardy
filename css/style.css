@@ -43,6 +43,21 @@ h2 {
   font-size: 30px;
   text-align: center;
   margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+form {
+  text-align: center;
+}
+
+form button {
+  border-radius: 25px;
+  background-color: crimson;
+}
+
+form button:hover {
+  background-color: white;
+  transition: 350ms;
 }
 
 footer {
