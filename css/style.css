@@ -32,7 +32,7 @@ a:link {
   padding: 10px 10px;
 }
 
-li:hover {
+nav li:hover {
   background-color: white;
   border-radius: 25px;
   box-shadow: 0px 4px 4px 0px;
