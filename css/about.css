@@ -1,0 +1,93 @@
+
+body {
+  font-family: 'Varela Round', sans-serif;
+}
+
+nav {
+  background-color: crimson;
+  width: auto;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 10px;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-left: 50px;
+}
+
+a {
+  color: black;
+}
+
+a:link {
+  float: left;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  padding: 10px 10px;
+}
+
+nav li:hover {
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 0px 4px 4px 0px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+form {
+  text-align: center;
+}
+
+form button {
+  border-radius: 25px;
+  background-color: crimson;
+}
+
+form button:hover {
+  background-color: white;
+  transition: 350ms;
+}
+
+footer {
+  background-color: crimson;
+  height: 100px;
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 40px;
+  font-weight: bold;
+}
+
+div {
+  height: 220px;
+  background-color: crimson;
+  margin: 20px;
+  color: white;
+  border-radius: 10px;
+}
+
+.profile{
+  color: white;
+  line-height: 25px;
+  height: 220px;
+  margin: 5px;
+}
+
+div img{
+  float: left;
+  margin: 10px 10px;
+}
+
+
+
