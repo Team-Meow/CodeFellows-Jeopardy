@@ -68,3 +68,66 @@ footer {
   padding-top: 40px;
   font-weight: bold;
 }
+
+#gameboard {
+  border: 3px black solid;
+  margin: auto;
+  width: 1300px;
+}
+
+#categories {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#categories div {
+  display: inline-block;
+  border: 1px black solid;
+  margin: auto;
+  padding: 10px;
+  height: 70px;
+  width: 230px;
+}
+
+#levelone {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#levelone div {
+  display: inline-block;
+  border: 1px black solid;
+  margin: auto;
+  padding: 10px;
+  height: 70px;
+  width: 230px;
+}
+
+#leveltwo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#leveltwo div {
+  display: inline-block;
+  border: 1px black solid;
+  margin: auto;
+  padding: 10px;
+  height: 70px;
+  width: 230px;
+}
+
+#levelthree {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#levelthree div {
+  display: inline-block;
+  border: 1px black solid;
+  margin: auto;
+  padding: 10px;
+  height: 70px;
+  width: 230px;
+}
