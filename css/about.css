@@ -82,6 +82,7 @@ div {
   line-height: 25px;
   height: 220px;
   margin: 5px;
+  overflow: scroll;
 }
 
 div img{
