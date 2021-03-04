@@ -46,18 +46,83 @@ h2 {
   margin-bottom: 20px;
 }
 
-form {
+#gameboard {
+  border: 5px black solid;
+  margin: auto;
+  width: 1300px;
+}
+
+#categories {
   text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 35px;
 }
 
-form button {
-  border-radius: 25px;
+#categories div {
+  display: inline-block;
+  border: 1px black solid;
   background-color: crimson;
+  color: white;
+  height: 70px;
+  width: 230px;
+  margin: auto;
+  padding: 10px;
 }
 
-form button:hover {
-  background-color: white;
-  transition: 350ms;
+#levelone {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'DotGothic16', sans-serif;
+}
+
+#levelone div {
+  font-size: 50px;
+  display: inline-block;
+  border: 1px black solid;
+  background-color: crimson;
+  color: rgb(252, 238, 160);
+  height: 70px;
+  width: 230px;
+  margin: auto;
+  padding: 10px;
+}
+
+#leveltwo {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'DotGothic16', sans-serif;
+}
+
+#leveltwo div {
+  font-size: 50px;
+  display: inline-block;
+  border: 1px black solid;
+  background-color: crimson;
+  color: rgb(252, 238, 160);
+  height: 70px;
+  width: 230px;
+  margin: auto;
+  padding: 10px;
+}
+
+#levelthree {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'DotGothic16', sans-serif;
+}
+
+#levelthree div {
+  font-size: 50px;
+  display: inline-block;
+  border: 1px black solid;
+  background-color: crimson;
+  color: rgb(252, 238, 160);
+  height: 70px;
+  width: 230px;
+  margin: auto;
+  padding: 10px;
 }
 
 footer {
@@ -67,67 +132,4 @@ footer {
   text-align: center;
   padding-top: 40px;
   font-weight: bold;
-}
-
-#gameboard {
-  border: 3px black solid;
-  margin: auto;
-  width: 1300px;
-}
-
-#categories {
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-#categories div {
-  display: inline-block;
-  border: 1px black solid;
-  margin: auto;
-  padding: 10px;
-  height: 70px;
-  width: 230px;
-}
-
-#levelone {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-#levelone div {
-  display: inline-block;
-  border: 1px black solid;
-  margin: auto;
-  padding: 10px;
-  height: 70px;
-  width: 230px;
-}
-
-#leveltwo {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-#leveltwo div {
-  display: inline-block;
-  border: 1px black solid;
-  margin: auto;
-  padding: 10px;
-  height: 70px;
-  width: 230px;
-}
-
-#levelthree {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-#levelthree div {
-  display: inline-block;
-  border: 1px black solid;
-  margin: auto;
-  padding: 10px;
-  height: 70px;
-  width: 230px;
 }
