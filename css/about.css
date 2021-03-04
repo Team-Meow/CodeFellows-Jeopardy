@@ -68,3 +68,26 @@ footer {
   padding-top: 40px;
   font-weight: bold;
 }
+
+div {
+  height: 220px;
+  background-color: crimson;
+  margin: 20px;
+  color: white;
+  border-radius: 10px;
+}
+
+.profile{
+  color: white;
+  line-height: 25px;
+  height: 220px;
+  margin: 5px;
+}
+
+div img{
+  float: left;
+  margin: 10px 10px;
+}
+
+
+
