@@ -143,6 +143,54 @@ h2 {
   box-shadow: 0px 4px 4px 0px black;
 }
 
+#levelfour {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'DotGothic16', sans-serif;
+}
+
+#levelfour div {
+  font-size: 50px;
+  display: inline-block;
+  border: 1px black solid;
+  background-color: crimson;
+  color: rgb(252, 238, 160);
+  height: 70px;
+  width: 230px;
+  margin: auto;
+  padding: 10px;
+}
+
+#levelfour div:hover {
+  transform: scale(1.1);
+  transition: 350ms;
+  box-shadow: 0px 4px 4px 0px black;
+}
+
+#levelfive {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'DotGothic16', sans-serif;
+}
+
+#levelfive div {
+  font-size: 50px;
+  display: inline-block;
+  border: 1px black solid;
+  background-color: crimson;
+  color: rgb(252, 238, 160);
+  height: 70px;
+  width: 230px;
+  margin: auto;
+  padding: 10px;
+}
+
+#levelfive div:hover {
+  transform: scale(1.1);
+  transition: 350ms;
+  box-shadow: 0px 4px 4px 0px black;
+}
+
 footer {
   background-color: crimson;
   height: 100px;
