@@ -61,6 +61,11 @@ form button:hover {
   transition: 350ms;
 }
 
+#proof{
+  width: max-content;
+  background-color: green;
+}
+
 footer {
   background-color: crimson;
   height: 100px;
