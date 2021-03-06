@@ -77,13 +77,15 @@
 
       <div class="modal-bg">
         <div class="modal">
-          <form id="questionBox">
-            <h2 id="question">Rendered Question from JS Constructor</h2>
-            <input type="radio" id="a" name="a" value="choiceA">
+          <form id="modalQuestion">
+            <input hidden type="text" name="category" value="htmlCategory">
+            <input hidden type="text" name="question" value="renderedfromjs">
+            <h2 id="question">Rendered From JS Constructor</h2>
+            <input type="radio" id="a" name="options" value="a">
             <label for="a">Choice A</label><br>
-            <input type="radio" id="b" name="b" value="choiceB">
+            <input type="radio" id="b" name="options" value="b">
             <label for="b">Choice B</label><br>
-            <input type="radio" id="c" name="c" value="choiceC">
+            <input type="radio" id="c" name="options" value="c">
             <label for="other">Choice C</label><br>
             <button>Submit</button>
           </form>
