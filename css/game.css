@@ -93,6 +93,7 @@ h2 {
   transform: scale(1.1);
   transition: 350ms;
   box-shadow: 0px 4px 4px 0px black;
+  cursor: pointer;
 }
 
 #leveltwo {
@@ -117,6 +118,7 @@ h2 {
   transform: scale(1.1);
   transition: 350ms;
   box-shadow: 0px 4px 4px 0px black;
+  cursor: pointer;
 }
 
 #levelthree {
@@ -141,6 +143,7 @@ h2 {
   transform: scale(1.1);
   transition: 350ms;
   box-shadow: 0px 4px 4px 0px black;
+  cursor: pointer;
 }
 
 #levelfour {
@@ -165,6 +168,7 @@ h2 {
   transform: scale(1.1);
   transition: 350ms;
   box-shadow: 0px 4px 4px 0px black;
+  cursor: pointer;
 }
 
 #levelfive {
@@ -189,6 +193,7 @@ h2 {
   transform: scale(1.1);
   transition: 350ms;
   box-shadow: 0px 4px 4px 0px black;
+  cursor: pointer;
 }
 
 footer {
