@@ -31,20 +31,20 @@
         <div id="html">HTML</div>
         <div id="css">CSS</div>
         <div id="javascript">JAVASCRIPT</div>
-        <div id="commands">GIT COMMANDS</div>
+        <div id="git">GIT COMMANDS</div>
         <div id="github">GITHUB</div>
       </section>
 
       <section id="levelone">
-        <div class="hmtl100">100</div>
-        <div id="css100">100</div>
-        <div>100</div>
-        <div>100</div>
-        <div>100</div>
+        <div class="html 100">100</div>
+        <div class="css 100">100</div>
+        <div class="javascript 100">100</div>
+        <div class="git 100">100</div>
+        <div class="github 100">100</div>
       </section>
 
       <section id="leveltwo">
-        <div>200</div>
+        <div class="html 200">200</div>
         <div>200</div>
         <div>200</div>
         <div>200</div>
@@ -77,14 +77,20 @@
 
       <div class="modal-bg">
         <div class="modal">
-          <form id="questionBox">
-            <h2 id="question">Rendered Question from JS Constructor</h2>
-            <input type="radio" id="a" name="a" value="choiceA">
-            <label for="a">Choice A</label><br>
-            <input type="radio" id="b" name="b" value="choiceB">
-            <label for="b">Choice B</label><br>
-            <input type="radio" id="c" name="c" value="choiceC">
-            <label for="other">Choice C</label><br>
+          <form id="modalQuestion">
+            <input hidden type="text" name="category" id="category">
+            <input hidden type="text" name="question" id="question">
+            <h2 id="questionText"></h2>
+
+            <input type="radio" id="inputA" name="options">
+            <label id="a">Choice A</label><br>
+
+            <input type="radio" id="inputB" name="options">
+            <label id="b">Choice B</label><br>
+            
+            <input type="radio" id="inputC" name="options">
+            <label for="c" id="c">Choice C</label><br>
+
             <button>Submit</button>
           </form>
         </div>
