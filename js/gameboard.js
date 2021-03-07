@@ -55,12 +55,6 @@ ghCategory.addQuestion();
 
 
 
-
-
-// render to form in modal window
-
-
-
 // eventlistener function for answering question
 function submitAnswer(event) { //eslint-disable-line
   event.preventDefault();
@@ -78,36 +72,10 @@ function submitAnswer(event) { //eslint-disable-line
           console.log('victory!', answeredCorrectly);
         }
       }
-
     }
 
   }
-
-
-
-
-  // let a = 'a';
-  // let b = 'b';
-  // let c = 'c';
-
-  // console.log(event.target.options.value);
-
-  // if (!event.target.a && !event.target.b && !event.target.c) {
-  //   alert('hey');
-  // }
-
-  // if (event.target.a === true) {
-  //   validateOption(a, event.target.category.value, event.target.question.value);
-  // } else if (event.target.b === true) {
-  //   validateOption(b, event.target.category.value, event.target.question.value);
-  // } else if (event.target.c === true) {
-  //   validateOption(c, event.target.category.value, event.target.question.value);
-  // }
 }
-
-// function validateOption(playerAnswer, gameCat, question) {
-
-// }
 
 function renderModal(obj, question) {
   document.getElementById('category').setAttribute('value', obj.catName);
