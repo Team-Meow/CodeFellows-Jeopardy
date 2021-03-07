@@ -75,21 +75,25 @@ function submitAnswer(event) { //eslint-disable-line
   let playerAnswer = event.target.options.value;
   let category = document.getElementById('category').value;
   let answeredCorrectly = false;
-  console.log('here', playerAnswer, category);
+  // console.log('here', playerAnswer, category);
 
   for(let i = 0; i < gameCategories.length; i++){
     if (category === gameCategories[i].catName) {
       for (let j = 0; j < gameCategories[i].catQuestions.length; j++) {
-        console.log(gameCategories[i].catQuestions[j].answer);
+        // console.log(gameCategories[i].catQuestions[j].answer);
         if (playerAnswer === gameCategories[i].catQuestions[j].answer) {
           answeredCorrectly = true;
-          console.log('victory!', answeredCorrectly);
+          // alert ('Correct!')
+          modalBg.classList.remove('bg-active');
+        }
+        else {
+          modalBg.classList.remove('bg-active');
         }
       }
     }
-
   }
 }
+// add score math, add tile color change based on correct/incorrect
 
 function renderModal(obj, question) {
   document.getElementById('category').setAttribute('value', obj.catName);
