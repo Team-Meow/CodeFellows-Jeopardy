@@ -22,27 +22,35 @@
 
     <main>
       <h2>Welcome to our game!</h2>
+<div class="container">
+  <div class="blocks">
+    <form id="form">
+      <fieldset>
+          <input id="create-profile"  type="text"  name="name" required="required" placeholder="your name here">
+          <button type="submit" class="hide-button">Create Profile
+          </fieldset>
+        </form>
+  </div>
 
-      <form id="form">
-        <fieldset>
-            <input id="create-profile" type="text"  name="name" required="required" placeholder="your name here">
-          <button type="submit">create profile</button>
-          <p id="proof">time stamp:</p>
-        </fieldset>
-      </form>
+  <div class="blocks">
+    <a href="game.html"><button class="a-button" >Play Game</button></a>
+  </div>
+  
+  <div class="blocks">
+    <h2>Game Rules</h2>
+    <ul>
+      <li>Rule 1</li>
+      <li>Rule 2</li>
+      <li>Rule 3</li>
+      <li>Rule 4</li>
+    </ul>
+  </div>
+</div>
 
-      <section>
-        <h2>Game Rules</h2>
-        <ul>
-          <li>Rule 1</li>
-          <li>Rule 2</li>
-          <li>Rule 3</li>
-          <li>Rule 4</li>
-        </ul>
-      </section>
     </main>
-
+    
   </body>
+  <p id="proof">time stamp:</p>
   <script src="js/home.js"></script>
   <footer>
     <p>&copy;Team Meow - Code Fellows 2021</p>
