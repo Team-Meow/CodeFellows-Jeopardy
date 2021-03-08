@@ -1,5 +1,9 @@
 'use-strict';
 
+// get form values - function
+const form = document.getElementById('form');
+const proof = document.getElementById('proof');
+
 // array to hold player name
 let globalArrayPlayerProfiles = [];
 // array to hold player object
@@ -24,51 +28,66 @@ function createPlayerProfile(){
   }
 }
 
-// get form values - function
-const form = document.getElementById('form');
-const proof = document.getElementById('proof');
-
 function getTextFieldValue(){
   let textFieldValue = document.getElementById('create-profile').value;
   globalArrayPlayerProfiles.push(textFieldValue);
+}
+
+function hideButtonWhenClicked(){
+  let button = document.querySelector('.hide-button');
+  if(button.style.display === 'none'){
+    button.style.display = 'block';
+  }else{
+    button.style.display = 'none';
+  }
 }
 
 // event handler - call back
 function profileEventHandler(event){
   event.preventDefault();
 
+  proof.textContent = `I am listening to you! ${event.timeStamp}`;
   getTextFieldValue();
   createPlayerProfile();
-  console.log(globalArrayPlayerProfileObjects[0]);
   sendObjectToLocalStorage();
-
-  proof.textContent = `I am listening to you! ${event.timeStamp}`;
+  hideButtonWhenClicked();
 }
 
 // event listener
-form.addEventListener('submit', profileEventHandler);
-
 
 // create function that removes one object from arr
 
+// create function that hides button when create profile
+
 
 // send individual objects to local storage
-// 
+// TA Bryant Reference Here
 function sendObjectToLocalStorage(){
+  // get first item that exists in local storage, if exists
   let retrieveItem = localStorage.getItem('profile-name');
+  console.log('retrievedItem', retrieveItem);
 
+  // if cant retrieve, set item to local storage
   if(!retrieveItem){
+    // set the item + stringify objects in global array
     let objectSentToStorage = localStorage.setItem( 'profile-name', JSON.stringify(globalArrayPlayerProfileObjects) );
+    console.log('objectSentToStorage',objectSentToStorage);
+    // return that value here
     return objectSentToStorage;
+
   }else{
     let parsedItem = JSON.parse(retrieveItem);
+    console.log('parsedItem',parsedItem);
+
     parsedItem.push(globalArrayPlayerProfileObjects.pop());
     localStorage.setItem('profile-name', JSON.stringify(parsedItem));
+
   }
 }
-
 // retrieve objects from local
 function readObjectsInLocalStorage(){
   // code here
 }
 readObjectsInLocalStorage();
+
+form.addEventListener('submit', profileEventHandler);
