@@ -6,12 +6,15 @@ const proof = document.getElementById('proof');
 
 // array to hold player name
 let globalArrayPlayerProfiles = [];
+
 // array to hold player object
 let globalArrayPlayerProfileObjects = [];
 
 //create constructor for player profile
 function PlayerProfileConstructor(name){
   this.name = name;
+  this.isNew = true;
+  this.netScore = 0;
 }
 
 // create player profile - function
@@ -22,8 +25,6 @@ function createPlayerProfile(){
       let newPlayerProfile = new PlayerProfileConstructor(name);
       globalArrayPlayerProfileObjects.push(newPlayerProfile);
       return newPlayerProfile;
-    }else{
-      return null;
     }
   }
 }
@@ -42,6 +43,11 @@ function hideButtonWhenClicked(){
   }
 }
 
+// function reloadForm(){
+//   window.location.reload();
+// }
+
+
 // event handler - call back
 function profileEventHandler(event){
   event.preventDefault();
@@ -51,43 +57,60 @@ function profileEventHandler(event){
   createPlayerProfile();
   sendObjectToLocalStorage();
   hideButtonWhenClicked();
+  // reloadForm();
 }
 
-// event listener
-
-// create function that removes one object from arr
-
-// create function that hides button when create profile
-
-
-// send individual objects to local storage
 // TA Bryant Reference Here
+
 function sendObjectToLocalStorage(){
   // get first item that exists in local storage, if exists
-  let retrieveItem = localStorage.getItem('profile-name');
-  console.log('retrievedItem', retrieveItem);
+  getObjectFromLocalStorage();
 
   // if cant retrieve, set item to local storage
-  if(!retrieveItem){
+  if(!getObjectFromLocalStorage()){
     // set the item + stringify objects in global array
-    let objectSentToStorage = localStorage.setItem( 'profile-name', JSON.stringify(globalArrayPlayerProfileObjects) );
-    console.log('objectSentToStorage',objectSentToStorage);
+    let sendObject = localStorage.setItem( 'profile-name', JSON.stringify(globalArrayPlayerProfileObjects) );
+
     // return that value here
-    return objectSentToStorage;
+    console.log(sendObject);
+    return sendObject;
 
   }else{
-    let parsedItem = JSON.parse(retrieveItem);
-    console.log('parsedItem',parsedItem);
+
+    let parsedItem = JSON.parse(getObjectFromLocalStorage());
 
     parsedItem.push(globalArrayPlayerProfileObjects.pop());
     localStorage.setItem('profile-name', JSON.stringify(parsedItem));
 
+    return parsedItem;
   }
 }
-// retrieve objects from local
-function readObjectsInLocalStorage(){
-  // code here
-}
-readObjectsInLocalStorage();
 
+// get all objects from Local
+function getObjectFromLocalStorage(){
+  let retrieveItem = localStorage.getItem('profile-name');
+  return retrieveItem;
+}
+
+// verify if player exists in local
+// parse arr obj from getObjectFromLocalStorage
+
+let arrLocalObjects = [];
+function verifyProfile(){
+  let stringifiedObjectProfiles = getObjectFromLocalStorage();
+  let parsedObjectProfiles = JSON.parse(stringifiedObjectProfiles);
+  arrLocalObjects.push(parsedObjectProfiles);
+
+  console.log(parsedObjectProfiles);
+
+  let targetPlayerProfile = getTextFieldValue();
+
+  // if(){
+  //   //code
+  // }
+
+}
+verifyProfile();
+
+// event listener
 form.addEventListener('submit', profileEventHandler);
