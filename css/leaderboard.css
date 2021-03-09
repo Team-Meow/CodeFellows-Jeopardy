@@ -1,0 +1,138 @@
+
+body {
+  font-family: 'Varela Round', sans-serif;
+}
+
+nav {
+  background-color: crimson;
+  width: auto;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 10px;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-left: 50px;
+}
+
+a {
+  color: black;
+}
+
+a:link {
+  float: left;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  padding: 10px 10px;
+}
+
+nav li:hover {
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 0px 4px 4px 0px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+#leaderboard {
+  border: 5px black solid;
+  margin: auto;
+  width: 700px;
+}
+
+#leaderboard-data {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 35px;
+}
+
+#leaderboard-data div {
+  display: inline-block;
+  border: 1px black solid;
+  background-color: crimson;
+  color: white;
+  height: 70px;
+  width: 230px;
+  margin: auto;
+  padding: 10px;
+}
+
+#row-one {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'DotGothic16', sans-serif;
+}
+
+#row-one div {
+  display: inline-block;
+  border: 1px black solid;
+  background-color: crimson;
+  color: rgb(252, 238, 160);
+  height: 70px;
+  width: 230px;
+  margin: auto;
+  padding: 10px;
+}
+
+#row-two {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'DotGothic16', sans-serif;
+}
+
+#row-two div {
+  display: inline-block;
+  border: 1px black solid;
+  background-color: crimson;
+  color: rgb(252, 238, 160);
+  height: 70px;
+  width: 230px;
+  margin: auto;
+  padding: 10px;
+}
+
+#row-three {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'DotGothic16', sans-serif;
+}
+
+#row-three div {
+  display: inline-block;
+  border: 1px black solid;
+  background-color: crimson;
+  color: rgb(252, 238, 160);
+  height: 70px;
+  width: 230px;
+  margin: auto;
+  padding: 10px;
+}
+
+#lb-table{
+  background-color: black;
+}
+
+footer {
+  background-color: crimson;
+  height: 100px;
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 40px;
+  font-weight: bold;
+}
+

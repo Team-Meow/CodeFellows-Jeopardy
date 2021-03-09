@@ -1,0 +1,115 @@
+/* global header styling */
+
+body {
+  font-family: 'Varela Round', sans-serif;
+}
+
+nav {
+  background-color: crimson;
+  width: auto;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 10px;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-left: 50px;
+}
+
+a {
+  color: black;
+}
+
+a:link {
+  float: left;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  padding: 10px 10px;
+}
+
+nav li:hover {
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 0px 4px 4px 0px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+form {
+  text-align: center;
+}
+
+.container {
+  margin: 35px auto;
+  text-align: center;
+  position: relative;
+}
+
+.blocks {
+  display: block;
+  height: 100px;
+  margin: 10px;
+}
+
+.hide-button {
+  background-color: crimson;
+  padding: 10px 24px;
+  border-radius: 8px;
+  width: max-content;
+  color: white;
+  box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+}
+
+form button:hover {
+  background-color: white;
+  color: black;
+  transition: 550ms;
+}
+
+.hide-button:active{
+  box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.4);  
+  transform: translateY(3px);
+}
+
+.a-button{
+  background-color: crimson;
+  padding: 10px 24px;
+  border-radius: 8px;
+  width: max-content;
+  color: white;
+  box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+.a-button:hover{
+  background-color: white;
+  color: black;
+  transition: 550ms;
+}
+
+.a-button:active{
+  box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.4);  
+  transform: translateY(3px);
+}
+
+footer {
+  background-color: crimson;
+  height: 100px;
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 40px;
+  font-weight: bold;
+}
+

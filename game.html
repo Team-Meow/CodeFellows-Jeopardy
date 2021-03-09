@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Code Fellows Jeopardy</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/game.css">
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <img src="img/CF Jeopardy.png" id="logo">
+  </header>
+  <nav>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="game.html">Quick Play</a></li>
+      <li><a href="leaderboard.html">Leaderboard</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2 id="Welcome">Let's play!</h2>
+    <section id="gameboard">
+
+      <section id="categories">
+        <div id="html">HTML</div>
+        <div id="css">CSS</div>
+        <div id="javascript">JAVASCRIPT</div>
+        <div id="git">GIT COMMANDS</div>
+        <div id="github">GITHUB</div>
+      </section>
+
+      <section id="levelone">
+        <div class="html 100">100</div>
+        <div class="css 100">100</div>
+        <div class="javascript 100">100</div>
+        <div class="git 100">100</div>
+        <div class="github 100">100</div>
+      </section>
+
+      <section id="leveltwo">
+        <div class="html 200">200</div>
+        <div class="css 200">200</div>
+        <div class="javascript 200">200</div>
+        <div class="git 200">200</div>
+        <div class="github 200">200</div>
+      </section>
+
+      <section id="levelthree">
+        <div class="html 300">300</div>
+        <div class="css 300">300</div>
+        <div class="javascript 300">300</div>
+        <div class="git 300">300</div>
+        <div class="github 300">300</div>
+      </section>
+
+      <section id="levelfour">
+        <div class="html 400">400</div>
+        <div class="css 400">400</div>
+        <div class="javascript 400">400</div>
+        <div class="git 400">400</div>
+        <div class="github 400">400</div>
+      </section>
+
+      <section id="levelfive">
+        <div class="html 500">500</div>
+        <div class="css 500">500</div>
+        <div class="javascript 500">500</div>
+        <div class="git 500">500</div>
+        <div class="github 500">500</div>
+      </section>
+
+      <div class="modal-bg">
+        <div class="modal">
+          <form id="modalQuestion">
+            <input hidden type="text" name="category" id="category">
+            <input hidden type="text" name="question" id="question">
+            <h2 id="questionText"></h2>
+
+            <input type="radio" id="inputA" name="options">
+            <label id="a">Choice A</label><br>
+
+            <input type="radio" id="inputB" name="options">
+            <label id="b">Choice B</label><br>
+            
+            <input type="radio" id="inputC" name="options">
+            <label id="c">Choice C</label><br>
+
+            <button>Submit</button>
+          </form>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="js/gameboard.js"></script>
+
+
+</body>
+<footer>
+  <p>&copy;Team Meow - Code Fellows 2021</p>
+</footer>
+
+</html>
