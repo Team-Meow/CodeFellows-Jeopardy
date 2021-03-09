@@ -64,7 +64,6 @@ form {
 }
 
 .hide-button {
-  visibility: visible;
   background-color: crimson;
   padding: 10px 24px;
   border-radius: 8px;

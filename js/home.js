@@ -36,31 +36,12 @@ function getTextFieldValue(){
   console.log(globalArrayPlayerProfiles);
 }
 
-function hideButtonWhenClicked(){
-  let button = document.querySelector('.hide-button');
-  if(button.style.display === 'none'){
-    button.style.display = 'block';
-  }else{
-    button.style.display = 'none';
-  }
-}
-
-// function reloadForm(){
-//   window.location.reload();
-// }
-
-
 // event handler - call back
 function profileEventHandler(event){
-  event.preventDefault();
 
-  let eventNameSubmit = document.getElementById('create-profile').value;
-
-  proof.textContent = `I am listening to you! ${event.timeStamp}`;
   getTextFieldValue();
   createPlayerProfile();
   sendObjectToLocalStorage();
-  hideButtonWhenClicked();
   // reloadForm();
   verifyProfile(eventNameSubmit);
 }
@@ -87,42 +68,38 @@ function sendObjectToLocalStorage(){
   }else{
 
     let parsedItem = JSON.parse(getObjectFromLocalStorage());
-
     parsedItem.push(globalArrayPlayerProfileObjects.pop());
     localStorage.setItem('profile-name', JSON.stringify(parsedItem));
-
     return parsedItem;
   }
 }
 
-
-
 // verify if player exists in local
 // parse arr obj from getObjectFromLocalStorage
 
-function verifyProfile(eventNameSubmit){
-  console.log(eventNameSubmit);
-  let arr = [];
+// function verifyProfile(eventNameSubmit){
+//   console.log(eventNameSubmit);
+//   let arr = [];
 
-  let stringifiedObjectProfiles = getObjectFromLocalStorage();
+//   let stringifiedObjectProfiles = getObjectFromLocalStorage();
 
-  let parsedObjectProfiles = JSON.parse(stringifiedObjectProfiles);
+//   let parsedObjectProfiles = JSON.parse(stringifiedObjectProfiles);
 
-  arr.push(parsedObjectProfiles);
+//   arr.push(parsedObjectProfiles);
 
-  for(let i = 0; i < arr.length;i++){
-    console.log(arr);
-    // 1 arr with multiple Objects
-    for(let j = 0;j < arr[i].length;j++ ){
-      if(!eventNameSubmit === arr[i][j].name ){
-        console.log('false path',!eventNameSubmit);
-      }else{
-        console.log('true path',eventNameSubmit);
-      }
-    }
-  }
+//   for(let i = 0; i < arr.length;i++){
+//     console.log(arr);
+//     // 1 arr with multiple Objects
+//     for(let j = 0;j < arr[i].length;j++ ){
+//       if(!eventNameSubmit === arr[i][j].name ){
+//         console.log('false path',!eventNameSubmit);
+//       }else{
+//         console.log('true path',eventNameSubmit);
+//       }
+//     }
+//   }
 
-}
+// }
 
 // event listener
 form.addEventListener('submit', profileEventHandler);
