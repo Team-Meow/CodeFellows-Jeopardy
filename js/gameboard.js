@@ -39,7 +39,7 @@ htmlCategory.addQuestion('What is the correct HTML element for playing audio fil
 
 let cssCategory = new Category('css');
 cssCategory.addQuestion('What does CSS stand for?', 'cascading style sheets', 'cascading steel ship', 'cascading style sheets', 'call style sheet', 100);
-cssCategory.addQuestion('In CSS, the selector points to?', 'element to style', 'color', 'element to style', 'the html', 200);
+cssCategory.addQuestion('In CSS, the selector points to?', 'element to style', 'index', 'element to style', 'the html', 200);
 cssCategory.addQuestion('What CSS property is used to change the text color of an element?', 'color', 'background color', 'color', ':pseudo-color', 300);
 cssCategory.addQuestion('In CSS, which value is a predefined key-word value for float?', 'inline-start', 'top', 'inline-start', 'inline-finish', 400);
 cssCategory.addQuestion('This special class is used to define the state of an element.', 'pseudo-class', 'sumo-class', 'first-class', 'pseudo-class', 500);
@@ -68,10 +68,28 @@ ghCategory.addQuestion('How is forking a repository different from cloning a rep
 // validate answer function
 
 
+function getName(){
+  let arr = [];
+
+  let stringifiedObjectProfiles =   localStorage.getItem('profile-name');
+  let parsedObjectProfiles = JSON.parse(stringifiedObjectProfiles);
+  arr.push(parsedObjectProfiles);
+
+  for(let i = 0; i < arr.length;i++){
+    for(let j = 0;j < arr[i].length;j++ ){
+      console.log(arr[i][j].name);
+      document.getElementById('Welcome').textContent =`${arr[i][j].name}, lets play!`;
+    }
+  }
+}
+getName();
+
+
 
 // eventlistener function for answering question
 function submitAnswer(event) { //eslint-disable-line
   event.preventDefault();
+
   let playerAnswer = event.target.options.value;
   let category = document.getElementById('category').value;
   let answeredCorrectly = false;
@@ -83,8 +101,10 @@ function submitAnswer(event) { //eslint-disable-line
         // console.log(gameCategories[i].catQuestions[j].answer);
         if (playerAnswer === gameCategories[i].catQuestions[j].answer) {
           answeredCorrectly = true;
-          // alert ('Correct!')
+          playerScore += gameCategories[i].catQuestions[j].points;
           modalBg.classList.remove('bg-active');
+
+          localStorage.setItem('score', JSON.stringify(playerScore));
         }
         else {
           modalBg.classList.remove('bg-active');
@@ -98,9 +118,11 @@ function submitAnswer(event) { //eslint-disable-line
 function renderModal(obj, question) {
   document.getElementById('category').setAttribute('value', obj.catName);
   document.getElementById('question').setAttribute('value', question.question);
+
   document.getElementById('inputA').setAttribute('value', question.a);
   document.getElementById('inputB').setAttribute('value', question.b);
   document.getElementById('inputC').setAttribute('value', question.c);
+
   document.getElementById('a').setAttribute('for', question.a);
   document.getElementById('b').setAttribute('for', question.b);
   document.getElementById('c').setAttribute('for', question.c);

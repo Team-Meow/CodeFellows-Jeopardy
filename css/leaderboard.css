@@ -46,36 +46,14 @@ h2 {
   margin-bottom: 20px;
 }
 
-form {
-  text-align: center;
-}
 
-form button {
-  border-radius: 25px;
-  background-color: crimson;
-}
-
-form button:hover {
-  background-color: white;
-  transition: 350ms;
-}
-
-footer {
-  background-color: crimson;
-  height: 100px;
-  margin-top: 20px;
-  text-align: center;
-  padding-top: 40px;
-  font-weight: bold;
-}
-
-#gameboard {
+#leaderboard {
   border: 5px black solid;
   margin: auto;
-  width: 1300px;
+  width: 700px;
 }
 
-#categories {
+#leaderboard-data {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -83,7 +61,7 @@ footer {
   font-size: 35px;
 }
 
-#categories div {
+#leaderboard-data div {
   display: inline-block;
   border: 1px black solid;
   background-color: crimson;
@@ -94,14 +72,13 @@ footer {
   padding: 10px;
 }
 
-#levelone {
+#row-one {
   text-align: center;
   margin-bottom: 20px;
   font-family: 'DotGothic16', sans-serif;
 }
 
-#levelone div {
-  font-size: 50px;
+#row-one div {
   display: inline-block;
   border: 1px black solid;
   background-color: crimson;
@@ -112,20 +89,13 @@ footer {
   padding: 10px;
 }
 
-#levelone div:hover {
-  transform: scale(1.1);
-  transition: 350ms;
-  box-shadow: 0px 4px 4px 0px black;
-}
-
-#leveltwo {
+#row-two {
   text-align: center;
   margin-bottom: 20px;
   font-family: 'DotGothic16', sans-serif;
 }
 
-#leveltwo div {
-  font-size: 50px;
+#row-two div {
   display: inline-block;
   border: 1px black solid;
   background-color: crimson;
@@ -136,20 +106,13 @@ footer {
   padding: 10px;
 }
 
-#leveltwo div:hover {
-  transform: scale(1.1);
-  transition: 350ms;
-  box-shadow: 0px 4px 4px 0px black;
-}
-
-#levelthree {
+#row-three {
   text-align: center;
   margin-bottom: 20px;
   font-family: 'DotGothic16', sans-serif;
 }
 
-#levelthree div {
-  font-size: 50px;
+#row-three div {
   display: inline-block;
   border: 1px black solid;
   background-color: crimson;
@@ -160,10 +123,8 @@ footer {
   padding: 10px;
 }
 
-#levelthree div:hover {
-  transform: scale(1.1);
-  transition: 350ms;
-  box-shadow: 0px 4px 4px 0px black;
+#lb-table{
+  background-color: black;
 }
 
 footer {
@@ -174,3 +135,4 @@ footer {
   padding-top: 40px;
   font-weight: bold;
 }
+
