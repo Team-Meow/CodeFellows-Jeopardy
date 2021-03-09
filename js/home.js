@@ -1,13 +1,20 @@
 'use-strict';
 
+// get form values - function
+const form = document.getElementById('form');
+const proof = document.getElementById('proof');
+
 // array to hold player name
 let globalArrayPlayerProfiles = [];
+
 // array to hold player object
 let globalArrayPlayerProfileObjects = [];
 
 //create constructor for player profile
 function PlayerProfileConstructor(name){
   this.name = name;
+  this.isNew = true;
+  this.netScore = 0;
 }
 
 // create player profile - function
@@ -17,58 +24,105 @@ function createPlayerProfile(){
       let name = document.getElementById('create-profile').value;
       let newPlayerProfile = new PlayerProfileConstructor(name);
       globalArrayPlayerProfileObjects.push(newPlayerProfile);
+      console.log(globalArrayPlayerProfileObjects,'object was pushed');
       return newPlayerProfile;
-    }else{
-      return null;
     }
   }
 }
 
-// get form values - function
-const form = document.getElementById('form');
-const proof = document.getElementById('proof');
-
 function getTextFieldValue(){
   let textFieldValue = document.getElementById('create-profile').value;
   globalArrayPlayerProfiles.push(textFieldValue);
+  console.log(globalArrayPlayerProfiles);
 }
+
+function hideButtonWhenClicked(){
+  let button = document.querySelector('.hide-button');
+  if(button.style.display === 'none'){
+    button.style.display = 'block';
+  }else{
+    button.style.display = 'none';
+  }
+}
+
+// function reloadForm(){
+//   window.location.reload();
+// }
+
 
 // event handler - call back
 function profileEventHandler(event){
   event.preventDefault();
 
-  getTextFieldValue();
-  createPlayerProfile();
-  console.log(globalArrayPlayerProfileObjects[0]);
-  sendObjectToLocalStorage();
+  let eventNameSubmit = document.getElementById('create-profile').value;
 
   proof.textContent = `I am listening to you! ${event.timeStamp}`;
+  getTextFieldValue();
+  createPlayerProfile();
+  sendObjectToLocalStorage();
+  hideButtonWhenClicked();
+  // reloadForm();
+  verifyProfile(eventNameSubmit);
+}
+
+// get all objects from Local
+function getObjectFromLocalStorage(){
+  let retrieveItem = localStorage.getItem('profile-name');
+  return retrieveItem;
+}
+
+function sendObjectToLocalStorage(){
+  // get first item that exists in local storage, if exists
+  getObjectFromLocalStorage();
+
+  // if cant retrieve, set item to local storage
+  if(!getObjectFromLocalStorage()){
+    // set the item + stringify objects in global array
+    let sendObject = localStorage.setItem( 'profile-name', JSON.stringify(globalArrayPlayerProfileObjects) );
+
+    // return that value here
+    console.log(sendObject);
+    return sendObject;
+
+  }else{
+
+    let parsedItem = JSON.parse(getObjectFromLocalStorage());
+
+    parsedItem.push(globalArrayPlayerProfileObjects.pop());
+    localStorage.setItem('profile-name', JSON.stringify(parsedItem));
+
+    return parsedItem;
+  }
+}
+
+
+
+// verify if player exists in local
+// parse arr obj from getObjectFromLocalStorage
+
+function verifyProfile(eventNameSubmit){
+  console.log(eventNameSubmit);
+  let arr = [];
+
+  let stringifiedObjectProfiles = getObjectFromLocalStorage();
+
+  let parsedObjectProfiles = JSON.parse(stringifiedObjectProfiles);
+
+  arr.push(parsedObjectProfiles);
+
+  for(let i = 0; i < arr.length;i++){
+    console.log(arr);
+    // 1 arr with multiple Objects
+    for(let j = 0;j < arr[i].length;j++ ){
+      if(!eventNameSubmit === arr[i][j].name ){
+        console.log('false path',!eventNameSubmit);
+      }else{
+        console.log('true path',eventNameSubmit);
+      }
+    }
+  }
+
 }
 
 // event listener
 form.addEventListener('submit', profileEventHandler);
-
-
-// create function that removes one object from arr
-
-
-// send individual objects to local storage
-// 
-function sendObjectToLocalStorage(){
-  let retrieveItem = localStorage.getItem('profile-name');
-
-  if(!retrieveItem){
-    let objectSentToStorage = localStorage.setItem( 'profile-name', JSON.stringify(globalArrayPlayerProfileObjects) );
-    return objectSentToStorage;
-  }else{
-    let parsedItem = JSON.parse(retrieveItem);
-    parsedItem.push(globalArrayPlayerProfileObjects.pop());
-    localStorage.setItem('profile-name', JSON.stringify(parsedItem));
-  }
-}
-
-// retrieve objects from local
-function readObjectsInLocalStorage(){
-  // code here
-}
-readObjectsInLocalStorage();

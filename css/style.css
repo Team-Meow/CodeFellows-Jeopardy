@@ -43,7 +43,7 @@ h2 {
   font-weight: bold;
   font-size: 30px;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 20px;
 }
 
@@ -51,19 +51,58 @@ form {
   text-align: center;
 }
 
-form button {
-  border-radius: 25px;
+.container {
+  margin: 35px auto;
+  text-align: center;
+  position: relative;
+}
+
+.blocks {
+  display: block;
+  height: 100px;
+  margin: 10px;
+}
+
+.hide-button {
+  visibility: visible;
   background-color: crimson;
+  padding: 10px 24px;
+  border-radius: 8px;
+  width: max-content;
+  color: white;
+  box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
 }
 
 form button:hover {
   background-color: white;
-  transition: 350ms;
+  color: black;
+  transition: 550ms;
 }
 
-#proof{
+.hide-button:active{
+  box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.4);  
+  transform: translateY(3px);
+}
+
+.a-button{
+  background-color: crimson;
+  padding: 10px 24px;
+  border-radius: 8px;
   width: max-content;
-  background-color: green;
+  color: white;
+  box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+.a-button:hover{
+  background-color: white;
+  color: black;
+  transition: 550ms;
+}
+
+.a-button:active{
+  box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.4);  
+  transform: translateY(3px);
 }
 
 footer {
