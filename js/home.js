@@ -13,8 +13,6 @@ let globalArrayPlayerProfileObjects = [];
 //create constructor for player profile
 function PlayerProfileConstructor(name){
   this.name = name;
-  this.isNew = true;
-  this.netScore = 0;
 }
 
 // create player profile - function

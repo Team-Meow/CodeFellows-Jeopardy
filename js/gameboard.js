@@ -67,11 +67,28 @@ ghCategory.addQuestion('How is forking a repository different from cloning a rep
 
 // validate answer function
 
+function getNetPoints(){
+  let arr = [];
+
+  let stringifiedObjectProfiles =   localStorage.getItem('profile-name');
+  let parsedObjectProfiles = JSON.parse(stringifiedObjectProfiles);
+
+  arr.push(parsedObjectProfiles);
+
+  for(let i = 0; i < arr.length;i++){
+    console.log(arr);
+    for(let j = 0;j < arr[i].length;j++ ){
+      arr[i][j].netScore;
+    }
+  }
+}
+getNetPoints();
 
 
 // eventlistener function for answering question
 function submitAnswer(event) { //eslint-disable-line
   event.preventDefault();
+
   let playerAnswer = event.target.options.value;
   let category = document.getElementById('category').value;
   let answeredCorrectly = false;
@@ -83,8 +100,10 @@ function submitAnswer(event) { //eslint-disable-line
         // console.log(gameCategories[i].catQuestions[j].answer);
         if (playerAnswer === gameCategories[i].catQuestions[j].answer) {
           answeredCorrectly = true;
-          // alert ('Correct!')
+          playerScore += gameCategories[i].catQuestions[j].points;
           modalBg.classList.remove('bg-active');
+
+          localStorage.setItem('score', JSON.stringify(playerScore));
         }
         else {
           modalBg.classList.remove('bg-active');
@@ -98,9 +117,11 @@ function submitAnswer(event) { //eslint-disable-line
 function renderModal(obj, question) {
   document.getElementById('category').setAttribute('value', obj.catName);
   document.getElementById('question').setAttribute('value', question.question);
+
   document.getElementById('inputA').setAttribute('value', question.a);
   document.getElementById('inputB').setAttribute('value', question.b);
   document.getElementById('inputC').setAttribute('value', question.c);
+
   document.getElementById('a').setAttribute('for', question.a);
   document.getElementById('b').setAttribute('for', question.b);
   document.getElementById('c').setAttribute('for', question.c);
