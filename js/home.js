@@ -24,6 +24,7 @@ function createPlayerProfile(){
       let name = document.getElementById('create-profile').value;
       let newPlayerProfile = new PlayerProfileConstructor(name);
       globalArrayPlayerProfileObjects.push(newPlayerProfile);
+      console.log(globalArrayPlayerProfileObjects,'object was pushed');
       return newPlayerProfile;
     }
   }
@@ -32,6 +33,7 @@ function createPlayerProfile(){
 function getTextFieldValue(){
   let textFieldValue = document.getElementById('create-profile').value;
   globalArrayPlayerProfiles.push(textFieldValue);
+  console.log(globalArrayPlayerProfiles);
 }
 
 function hideButtonWhenClicked(){
@@ -52,15 +54,22 @@ function hideButtonWhenClicked(){
 function profileEventHandler(event){
   event.preventDefault();
 
+  let eventNameSubmit = document.getElementById('create-profile').value;
+
   proof.textContent = `I am listening to you! ${event.timeStamp}`;
   getTextFieldValue();
   createPlayerProfile();
   sendObjectToLocalStorage();
   hideButtonWhenClicked();
   // reloadForm();
+  verifyProfile(eventNameSubmit);
 }
 
-// TA Bryant Reference Here
+// get all objects from Local
+function getObjectFromLocalStorage(){
+  let retrieveItem = localStorage.getItem('profile-name');
+  return retrieveItem;
+}
 
 function sendObjectToLocalStorage(){
   // get first item that exists in local storage, if exists
@@ -86,31 +95,34 @@ function sendObjectToLocalStorage(){
   }
 }
 
-// get all objects from Local
-function getObjectFromLocalStorage(){
-  let retrieveItem = localStorage.getItem('profile-name');
-  return retrieveItem;
-}
+
 
 // verify if player exists in local
 // parse arr obj from getObjectFromLocalStorage
 
-let arrLocalObjects = [];
-function verifyProfile(){
+function verifyProfile(eventNameSubmit){
+  console.log(eventNameSubmit);
+  let arr = [];
+
   let stringifiedObjectProfiles = getObjectFromLocalStorage();
+
   let parsedObjectProfiles = JSON.parse(stringifiedObjectProfiles);
-  arrLocalObjects.push(parsedObjectProfiles);
 
-  console.log(parsedObjectProfiles);
+  arr.push(parsedObjectProfiles);
 
-  let targetPlayerProfile = getTextFieldValue();
-
-  // if(){
-  //   //code
-  // }
+  for(let i = 0; i < arr.length;i++){
+    console.log(arr);
+    // 1 arr with multiple Objects
+    for(let j = 0;j < arr[i].length;j++ ){
+      if(!eventNameSubmit === arr[i][j].name ){
+        console.log('false path',!eventNameSubmit);
+      }else{
+        console.log('true path',eventNameSubmit);
+      }
+    }
+  }
 
 }
-verifyProfile();
 
 // event listener
 form.addEventListener('submit', profileEventHandler);
