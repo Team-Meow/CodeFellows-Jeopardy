@@ -46,20 +46,6 @@ h2 {
   margin-bottom: 20px;
 }
 
-form {
-  text-align: center;
-}
-
-form button {
-  border-radius: 25px;
-  background-color: crimson;
-}
-
-form button:hover {
-  background-color: white;
-  transition: 350ms;
-}
-
 footer {
   background-color: crimson;
   height: 100px;
@@ -78,17 +64,31 @@ div {
 }
 
 .profile{
+  background-color: crimson;
   color: white;
+  margin: 10px;
   line-height: 25px;
   height: 220px;
-  margin: 5px;
-  overflow: scroll;
 }
 
 div img{
   float: left;
-  margin: 10px 10px;
+  margin: 10px;
 }
 
+#shelby {
+  height: 200px;
+}
 
+#mohsin {
+  height: 200px;
+}
+
+#lorenzo {
+  height: 200px;
+}
+
+#audrey {
+  height: 200px;
+}
 

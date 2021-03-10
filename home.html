@@ -1,56 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Code Fellows Jeopardy</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-  </head>
 
-  <body>
-    <header>
-      <img src="img/CF Jeopardy.png" id="logo">
-    </header>
-    <nav>
-      <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="game.html">Quick Play</a></li>
-        <li><a href="leaderboard.html">Leaderboard</a></li>
-        <li><a href="about.html">About Us</a></li>
-      </ul>
-    </nav>
+<head>
+  <title>Code Fellows Jeopardy</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+</head>
 
-    <main>
-      <h2>Welcome to our game!</h2>
-<div class="container">
-  <div class="blocks">
-    <form id="form" action="game.html">
-      <fieldset>
-          <input id="create-profile"  type="text"  name="name" required="required" placeholder="your name here">
-          <button type="submit"  >Play</button>
+<body>
+  <header>
+    <img src="img/cf-jeopardy.png" id="logo">
+  </header>
+  <nav>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="game.html">Quick Play</a></li>
+      <li><a href="leaderboard.html">Leaderboard</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Welcome to our game!</h2>
+      <div class="container">
+        <form id="form" action="game.html">
+          <fieldset>
+            <input id="create-profile" type="text" name="name" required="required" placeholder="your name here">
+            <button type="submit">Play</button>
           </fieldset>
         </form>
-  </div>
+      </div>
 
-  <div class="blocks">
-    <h2>Game Rules</h2>
-    <ul>
-      <li>Rule 1 : Play individually</li>
-      <li>Rule 2 : Pick a category and a point value</li>
-      <li>Rule 3 : Click on the chosen box for the question</li>
-      <li>Rule 4 : Pick the radio button for the answer you want to select and click submit  
-      </li>
-      <li>Rule 5 : Continue until all questions have been answered 
-      </li>
-    </ul>
-  </div>
-</div>
+      <div class="blocks">
+        <h2>Game Rules</h2>
+        <ul>
+          <li>Rule 1 : Play individually</li>
+          <li>Rule 2 : Pick a category and a point value</li>
+          <li>Rule 3 : Click on the chosen box for the question</li>
+          <li>Rule 4 : Pick the radio button for the answer you want to select and click submit
+          </li>
+          <li>Rule 5 : Continue until all questions have been answered
+          </li>
+        </ul>
+      </div>
 
-    </main>
-    
-  </body>
-  <script src="js/home.js"></script>
-  <footer>
-    <p>&copy;Team Meow - Code Fellows 2021</p>
-  </footer>
+
+  </main>
+
+</body>
+<script src="js/home.js"></script>
+<footer>
+  <p>&copy;Team Meow - Code Fellows 2021</p>
+</footer>
+
 </html>
