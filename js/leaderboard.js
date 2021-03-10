@@ -1,35 +1,51 @@
-'use-strict';
+'use strict';
+let table = document.getElementById('table-container');
+let thead = document.getElementById('table-thead');
+let tbody = document.getElementById('table-tbody');
 
-var table = document.getElementById('lb-table');
-console.log(table);
-let header = document.getElementById('table-header');
-let tbody = document.getElementById('table-body');
-let footer = document.getElementById('table-footer');
-
-function tableHeader() {
-  let thead = document.createElement('thead');
+function tableHeader(){
   let tr = document.createElement('tr');
-  let th = document.createElement('th');
+  let thName = document.createElement('th');
+  let thScore = document.createElement('th');
 
-  th.textContent = 'somthin';
+  thName.textContent = 'Name';
+  thScore.textContent = ' Score ';
 
-  // tr.appendChild(th);
-
-  thead.appendChild(th);
+  tr.appendChild(thName);
+  tr.appendChild(thScore);
   thead.appendChild(tr);
-  table.appendChild(tr);
-
-  for(var i =0; i<3;i++){
-    let td = document.createElement('td');
-    td.textContent = 'hola';
-    tr.appendChild(td);
-  }
-
-
+  table.appendChild(thead);
 }
 tableHeader();
 
+function tableBody(name,score){
+  let tr = document.createElement('tr');
+  let td = document.createElement('td');
+  let tdTwo = document.createElement('td');
 
-// let stringifiedObjectProfiles = localStorage.getItem('profile-name');
-// let parsedObjectProfiles = JSON.parse(stringifiedObjectProfiles);
-// arr.push(parsedObjectProfiles);
+  td.textContent = name;
+  tdTwo.textContent = score;
+
+  tr.appendChild(td);
+  tr.appendChild(tdTwo);
+  tbody.appendChild(tr);
+  table.appendChild(tbody);
+}
+
+function getNameScore(){
+  let recievedFromLocal = localStorage.getItem('profile-name');
+  let dataRetrieved = JSON.parse(recievedFromLocal);
+  let arr = [];
+  arr.push(dataRetrieved);
+
+  let scoreProp = JSON.parse(localStorage.getItem('score'));
+
+  for(let i = 0; i < arr.length; i++){
+    for(let j = 0; j < arr[i].length; j++){
+      let nameProp = arr[i][j].name;
+      tableBody(nameProp,scoreProp);
+    }
+  }
+}
+getNameScore();
+
