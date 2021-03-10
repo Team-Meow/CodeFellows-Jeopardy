@@ -82,7 +82,7 @@ function submitAnswer(event) { //eslint-disable-line
     if (category === gameCategories[i].catName) {
       for (let j = 0; j < gameCategories[i].catQuestions.length; j++) {
         if (playerAnswer === gameCategories[i].catQuestions[j].answer) {
-          answeredCorrectly = true;
+          answeredCorrectly = true; // eslint-disable-line
           playerScore += gameCategories[i].catQuestions[j].points;
           modalBg.classList.remove('bg-active');
           localStorage.setItem('score', JSON.stringify(playerScore));
