@@ -46,6 +46,12 @@ h2 {
   margin-bottom: 20px;
 }
 
+h3 {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 #gameboard {
   border: 5px black solid;
   margin: auto;
@@ -259,3 +265,8 @@ label {
   line-height: 25px;
   margin: 10px;
 }
+
+/* .unclick {
+  background-color: black;
+  color: black;
+} */

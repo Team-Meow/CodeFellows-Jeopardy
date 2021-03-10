@@ -125,11 +125,22 @@ function questionClick(event) { //eslint-disable-line
           renderModal(gameCategories[i], gameCategories[i].catQuestions[j]);
         }
       }
-
     }
   }
   modalBg.classList.add('bg-active');
 }
 
+// function divClick(event) {
+//   let clicked = event.target.classList[2];
+//   console.log(clicked);
+//   // if (clicked === true) {
+//   //   return classList.toggle('clicked');
+//   // }
+//   if (event.target.classList.contains('unclick')) {
+//     event.target.classList.toggle('clicked');
+//   }
+// }
+
 tileSelect.addEventListener('click', questionClick);
 gameForm.addEventListener('submit', submitAnswer);
+// tileSelect.addEventListener('submit', divClick);
