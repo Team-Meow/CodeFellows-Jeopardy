@@ -227,18 +227,35 @@ footer {
 
 .modal {
   background-color: white;
-  width: 30%;
-  height: 30%;
+  width: 600px;
+  height: 300px;
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
+  padding: 20px;
 }
 
 .modal button {
   padding: 10px 30px;
   background-color: #2980b9;
+  border-radius: 25px;
   color: white;
   border: none;
   cursor: pointer;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+#questionText {
+  text-align: center;
+  line-height: 25px;
+}
+
+input[type=radio] {
+  margin-left: 20px;
+}
+
+label {
+  line-height: 25px;
+  margin: 10px;
 }
