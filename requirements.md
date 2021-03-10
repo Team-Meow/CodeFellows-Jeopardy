@@ -37,7 +37,7 @@
 
 - What are your stretch goals?
   - An animated host avatar
-  - Exanding the number of questions on the game board
+  - Expanding the number of questions on the game board
   - Visual accessiblity
   - Super fancy CSS transitions (example tile filp)
   - Daily double questions that will generate on the game board
