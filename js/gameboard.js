@@ -1,22 +1,16 @@
 'use strict';
-
-// global variables
 let tileSelect = document.querySelector('#gameboard');
 let modalBg = document.querySelector('.modal-bg');
 let gameForm = document.querySelector('#modalQuestion');
 let playerScore = 0;
 let gameCategories = [];
 
-
-// Category Constructor
 function Category(catName) {
   this.catName = catName;
   this.catQuestions = [];
   gameCategories.push(this);
 }
 
-
-// add questions method
 Category.prototype.addQuestion = function (question, answer, a, b, c, points) {
   this.catQuestions.push({
     question,
@@ -28,8 +22,6 @@ Category.prototype.addQuestion = function (question, answer, a, b, c, points) {
   });
 };
 
-
-// new category instances
 let htmlCategory = new Category('html');
 htmlCategory.addQuestion('What tag do you need to run JavaScript code in an html file?', '<script></script>', '<js></js>', '<javascript></javascript>', '<script></script>', 100);
 htmlCategory.addQuestion('The elements we need to put inside of a form are: input, button and _____?', 'label', 'submit', 'label', 'legend', 200);
@@ -65,46 +57,36 @@ ghCategory.addQuestion('When creating a new Repo what is the name of the default
 ghCategory.addQuestion('What is designed to host your personal website from a GitHub repo?', 'GitHub Pages', 'GitHub MarketPlace', 'GitHub Pages', 'GitHub Projects', 400);
 ghCategory.addQuestion('How is forking a repository different from cloning a repository?', 'Forking is a copy of another repo that lives on your account only', 'They are interchangeable', 'The forked rep is your active repo', 'Forking is a copy of another repo that lives on your account only', 500);
 
-// validate answer function
-
-
 function getName(){
   let arr = [];
-
-  let stringifiedObjectProfiles =   localStorage.getItem('profile-name');
+  let stringifiedObjectProfiles = localStorage.getItem('profile-name');
   let parsedObjectProfiles = JSON.parse(stringifiedObjectProfiles);
   arr.push(parsedObjectProfiles);
 
   for(let i = 0; i < arr.length;i++){
     for(let j = 0;j < arr[i].length;j++ ){
-      console.log(arr[i][j].name);
       document.getElementById('Welcome').textContent =`${arr[i][j].name}, lets play!`;
     }
   }
 }
 getName();
 
-
-
-// eventlistener function for answering question
 function submitAnswer(event) { //eslint-disable-line
   event.preventDefault();
 
   let playerAnswer = event.target.options.value;
   let category = document.getElementById('category').value;
   let answeredCorrectly = false;
-  // console.log('here', playerAnswer, category);
 
   for(let i = 0; i < gameCategories.length; i++){
     if (category === gameCategories[i].catName) {
       for (let j = 0; j < gameCategories[i].catQuestions.length; j++) {
-        // console.log(gameCategories[i].catQuestions[j].answer);
         if (playerAnswer === gameCategories[i].catQuestions[j].answer) {
           answeredCorrectly = true;
           playerScore += gameCategories[i].catQuestions[j].points;
           modalBg.classList.remove('bg-active');
-
           localStorage.setItem('score', JSON.stringify(playerScore));
+          document.getElementById('game-score').textContent =`${playerScore}, is your score!`;
         }
         else {
           modalBg.classList.remove('bg-active');
@@ -113,7 +95,6 @@ function submitAnswer(event) { //eslint-disable-line
     }
   }
 }
-// add score math, add tile color change based on correct/incorrect
 
 function renderModal(obj, question) {
   document.getElementById('category').setAttribute('value', obj.catName);
@@ -127,27 +108,19 @@ function renderModal(obj, question) {
   document.getElementById('b').setAttribute('for', question.b);
   document.getElementById('c').setAttribute('for', question.c);
 
-  // console.log(question);
   document.getElementById('questionText').textContent = question.question;
   document.getElementById('a').textContent = question.a;
   document.getElementById('b').textContent = question.b;
   document.getElementById('c').textContent = question.c;
 }
 
-// renderModal(gameCategories[0]);
-
-
-
-// used youtube to figure out modal js https://www.youtube.com/watch?v=KjQ8uvAt9kQ
 function questionClick(event) { //eslint-disable-line
-  // getEvent.target and pass relevant info to modal
   let category = event.target.classList[0];
   let question = +event.target.classList[1];
 
   for (let i = 0; i < gameCategories.length; i++) {
     if (category === gameCategories[i].catName) {
       for (let j = 0; j < gameCategories[i].catQuestions.length; j++) {
-        // console.log(gameCategories[i].catQuestions[j].points);
         if (question === gameCategories[i].catQuestions[j].points) {
           renderModal(gameCategories[i], gameCategories[i].catQuestions[j]);
         }
@@ -155,13 +128,8 @@ function questionClick(event) { //eslint-disable-line
 
     }
   }
-  // console.log(category, question);
-
-  // render the modal here
   modalBg.classList.add('bg-active');
 }
-
-
 
 tileSelect.addEventListener('click', questionClick);
 gameForm.addEventListener('submit', submitAnswer);
