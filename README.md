@@ -11,7 +11,7 @@ user friendly jeopardy game for 100/200 level Code Fellows students as a fun and
 
 ### Code Fellows Jeopardy Trivia Game
 
-**Summary** - Five category, basic Jeopardy style trivia game. 
+**Summary** - Five category, basic Jeopardy style trivia game.
 
 **Categories** - CSS, HTML, Javascript, Git Commands, and GitHub (one round, play until you answer all questions)
 
@@ -22,6 +22,8 @@ user friendly jeopardy game for 100/200 level Code Fellows students as a fun and
 - [CSS Reset](https://meyerweb.com/eric/tools/css/reset/)
 - [Modal Window ref](https://www.youtube.com/watch?v=KjQ8uvAt9kQ)
 - [Local Storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+- [JavaScript Counters](https://dev.to/stewyearth/making-a-simple-counter-in-javascript-html-2ici)
+- [JavaScript Toggle](https://dommagnifi.co/2019-05-06-basic-class-toggle-with-vanilla-js-es6/)
 - TA/Instructor assistance: Bryant Davis and Ryan Gallaway
 
 ### Reflections & Comments
