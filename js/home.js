@@ -7,6 +7,7 @@ let globalArrayPlayerProfileObjects = [];
 
 function PlayerProfileConstructor(name){
   this.name = name;
+  this.score = 0;
 }
 
 function createPlayerProfile(){
