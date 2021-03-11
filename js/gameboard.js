@@ -100,7 +100,7 @@ function submitAnswer(event) { //eslint-disable-line
 }
 
 function takePlayerToLeaderBoard(counter,currentScore){
-  if(counter === 25 || topScore === currentScore){
+  if(counter === 5 || topScore === currentScore){
     window.location.href = '/leaderboard.html';
   }
 }
