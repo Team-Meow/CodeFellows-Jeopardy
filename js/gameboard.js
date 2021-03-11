@@ -3,6 +3,8 @@ let tileSelect = document.querySelector('#gameboard');
 let modalBg = document.querySelector('.modal-bg');
 let gameForm = document.querySelector('#modalQuestion');
 let playerScore = 0;
+let eventCounter = 0;
+let topScore = 7500;
 let gameCategories = [];
 
 function Category(catName) {
@@ -73,10 +75,10 @@ getName();
 
 function submitAnswer(event) { //eslint-disable-line
   event.preventDefault();
-
   let playerAnswer = event.target.options.value;
   let category = document.getElementById('category').value;
   let answeredCorrectly = false;
+  eventCounter++;
 
   for(let i = 0; i < gameCategories.length; i++){
     if (category === gameCategories[i].catName) {
@@ -84,9 +86,9 @@ function submitAnswer(event) { //eslint-disable-line
         if (playerAnswer === gameCategories[i].catQuestions[j].answer) {
           answeredCorrectly = true; // eslint-disable-line
           playerScore += gameCategories[i].catQuestions[j].points;
-          modalBg.classList.remove('bg-active');
-          localStorage.setItem('score', JSON.stringify(playerScore));
           document.getElementById('game-score').textContent =`${playerScore}, is your score!`;
+          localStorage.setItem('score', JSON.stringify(playerScore));
+          modalBg.classList.remove('bg-active');
         }
         else {
           modalBg.classList.remove('bg-active');
@@ -94,7 +96,16 @@ function submitAnswer(event) { //eslint-disable-line
       }
     }
   }
+  takePlayerToLeaderBoard(eventCounter,playerScore);
 }
+
+function takePlayerToLeaderBoard(counter,currentScore){
+  if(counter === 25 || topScore === currentScore){
+    window.location.href = '/leaderboard.html';
+    document.setItem('player-profile');
+  }
+}
+
 
 function renderModal(obj, question) {
   document.getElementById('category').setAttribute('value', obj.catName);
@@ -114,7 +125,9 @@ function renderModal(obj, question) {
   document.getElementById('c').textContent = question.c;
 }
 
+
 function questionClick(event) { //eslint-disable-line
+
   let category = event.target.classList[0];
   let question = +event.target.classList[1];
 
@@ -123,6 +136,8 @@ function questionClick(event) { //eslint-disable-line
       for (let j = 0; j < gameCategories[i].catQuestions.length; j++) {
         if (question === gameCategories[i].catQuestions[j].points) {
           renderModal(gameCategories[i], gameCategories[i].catQuestions[j]);
+          event.target.classList.remove('unclicked');
+          event.target.classList.add('clicked');
         }
       }
     }
@@ -130,17 +145,5 @@ function questionClick(event) { //eslint-disable-line
   modalBg.classList.add('bg-active');
 }
 
-// function divClick(event) {
-//   let clicked = event.target.classList[2];
-//   console.log(clicked);
-//   // if (clicked === true) {
-//   //   return classList.toggle('clicked');
-//   // }
-//   if (event.target.classList.contains('unclick')) {
-//     event.target.classList.toggle('clicked');
-//   }
-// }
-
 tileSelect.addEventListener('click', questionClick);
 gameForm.addEventListener('submit', submitAnswer);
-// tileSelect.addEventListener('submit', divClick);
